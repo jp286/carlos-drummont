@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carlos Drummond de Andrade — Modernismo</title>
+
+    <style>
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f3eadb;
+            color: #29251f;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* =========================
+           MENU
+        ========================== */
+
+        header {
+            background: #27231f;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            min-height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .menu a {
+            padding: 9px 14px;
+            border-radius: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #a94738;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(169, 71, 56, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f5eee2,
+                    #e9dcc8
+                );
+
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tag {
+            color: #a94738;
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 9vw, 8rem);
+            line-height: 0.85;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #a94738;
+        }
+
+        .hero-text {
+            max-width: 650px;
+            font-size: 1.15rem;
+            color: #665d54;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 18px;
+
+            border: 1px solid #d2c2ad;
+            border-radius: 30px;
+
+            background: rgba(255, 250, 240, 0.7);
+
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* =========================
+           RETRATO ILUSTRATIVO
+        ========================== */
+
+        .portrait-area {
+            position: relative;
+            min-height: 500px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portrait {
+            width: 340px;
+            height: 440px;
+
+            background:
+                radial-gradient(
+                    ellipse at center 35%,
+                    #c4a47b 0 13%,
+                    transparent 13.5%
+                ),
+                radial-gradient(
+                    ellipse at center 57%,
+                    #80634d 0 25%,
+                    transparent 25.5%
+                ),
+                linear-gradient(
+                    110deg,
+                    transparent 35%,
+                    #44382f 35% 65%,
+                    transparent 65%
+                ),
+                #cdbb9d;
+
+            border: 12px solid #fffaf0;
+            box-shadow: 0 20px 50px rgba(50, 40, 25, 0.2);
+
+            transform: rotate(3deg);
+
+            position: relative;
+        }
+
+        .portrait::after {
+            content: "CARLOS DRUMMOND DE ANDRADE";
+
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .floating-card {
+            position: absolute;
+
+            padding: 15px 20px;
+
+            background: #fffaf0;
+
+            box-shadow: 0 12px 30px rgba(50, 40, 25, 0.15);
+
+            font-size: 1rem;
+
+            border-left: 4px solid #d49a45;
+        }
+
+        .floating-one {
+            top: 8%;
+            right: 0;
+            transform: rotate(-4deg);
+        }
+
+        .floating-two {
+            bottom: 8%;
+            left: 0;
+            transform: rotate(3deg);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================== */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #a94738;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin-top: 15px;
+
+            color: #6c6359;
+        }
+
+        /* =========================
+           BIOGRAFIA
+        ========================== */
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 25px;
+        }
+
+        .paper {
+            background: #fffaf0;
+            border: 1px solid #d8cbb8;
+            padding: 35px;
+
+            box-shadow: 0 15px 40px rgba(50, 40, 25, 0.08);
+        }
+
+        .paper p {
+            margin-bottom: 18px;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .fact {
+            padding: 22px;
+            background: #f8efe1;
+            border: 1px solid #d8cbb8;
+        }
+
+        .fact strong {
+            display: block;
+
+            color: #a94738;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .fact span {
+            display: block;
+            margin-top: 8px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           LINHA DO TEMPO
+        ========================== */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            left: 34px;
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: #d2c2ad;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+
+            gap: 25px;
+
+            margin-bottom: 25px;
+
+            position: relative;
+        }
+
+        .year {
+            width: 68px;
+            height: 68px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #a94738;
+            color: white;
+
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 0.85rem;
+
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: #fffaf0;
+
+            border: 1px solid #d8cbb8;
+
+            padding: 20px 25px;
+
+            box-shadow: 0 8px 25px rgba(50, 40, 25, 0.06);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            color: #6c6359;
+        }
+
+        /* =========================
+           CARACTERÍSTICAS
+        ========================== */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .feature {
+            min-height: 200px;
+
+            padding: 28px;
+
+            background: #fffaf0;
+
+            border: 1px solid #d8cbb8;
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(50, 40, 25, 0.12);
+        }
+
+        .feature-number {
+            color: #d49a45;
+
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .feature h3 {
+            margin: 15px 0 8px;
+            font-size: 1.35rem;
+        }
+
+        .feature p {
+            color: #6c6359;
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           FRASE DE DESTAQUE
+        ========================== */
+
+        .quote {
+            margin: 30px 0 80px;
+
+            padding: 60px 10%;
+
+            text-align: center;
+
+            border-top: 1px solid #d2c2ad;
+            border-bottom: 1px solid #d2c2ad;
+        }
+
+        .quote p {
+            font-size: clamp(1.6rem, 3vw, 2.6rem);
+            line-height: 1.25;
+        }
+
+        .quote span {
+            display: block;
+
+            margin-top: 20px;
+
+            color: #a94738;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           LIVROS
+        ========================== */
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .book {
+            min-height: 310px;
+
+            padding: 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            color: white;
+
+            box-shadow: 0 15px 35px rgba(50, 40, 25, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .book:hover {
+            transform: translateY(-8px) rotate(-1deg);
+        }
+
+        .book:nth-child(1) {
+            background: #715348;
+        }
+
+        .book:nth-child(2) {
+            background: #536653;
+        }
+
+        .book:nth-child(3) {
+            background: #a94738;
+        }
+
+        .book:nth-child(4) {
+            background: #554f6b;
+        }
+
+        .book-year {
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .book h3 {
+            font-size: 1.7rem;
+            line-height: 1.1;
+        }
+
+        .book p {
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           ATIVIDADE
+        ========================== */
+
+        .activities {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .activity {
+            background: #fffaf0;
+            border: 1px solid #d8cbb8;
+            padding: 30px;
+        }
+
+        .activity h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .activity ol {
+            padding-left: 25px;
+            color: #6c6359;
+        }
+
+        .activity li {
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================== */
+
+        footer {
+            background: #27231f;
+            color: white;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        footer h2 {
+            font-size: 1.5rem;
+        }
+
+        footer p {
+            margin-top: 8px;
+            color: #cfc7be;
+        }
+
+        .back-top {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+
+            padding: 8px 15px;
+
+            border: 1px solid #655e57;
+            border-radius: 20px;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait-area {
+                min-height: 450px;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .books {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .activities {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .facts {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .books {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait {
+                width: 280px;
+                height: 370px;
+            }
+
+            .floating-one {
+                right: -5px;
+            }
+
+            .floating-two {
+                left: -5px;
+            }
+
+            .timeline::before {
+                left: 27px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 55px 1fr;
+                gap: 15px;
+            }
+
+            .year {
+                width: 54px;
+                height: 54px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <header id="topo">
+
+        <nav>
+
+            <div class="logo">
+                DRUMMOND
+            </div>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#autor">O autor</a>
+                </li>
+
+                <li>
+                    <a href="#linha-do-tempo">Linha do tempo</a>
+                </li>
+
+                <li>
+                    <a href="#poesia">Poesia</a>
+                </li>
+
+                <li>
+                    <a href="#obras">Obras</a>
+                </li>
+
+                <li>
+                    <a href="#atividade">Atividade</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CAPA
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div>
+
+                    <div class="tag">
+                        Exposição escolar · 1º ano do Ensino Médio
+                    </div>
+
+                    <h1>
+                        Carlos<br>
+                        <span>Drummond</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        Um dos grandes nomes da segunda fase do
+                        Modernismo brasileiro. Sua poesia transforma
+                        situações do cotidiano em reflexões sobre o
+                        indivíduo, a sociedade, a memória e a existência.
+                    </p>
+
+                    <div class="badge">
+                        MODERNISMO BRASILEIRO · 1930–1945
+                    </div>
+
+                </div>
+
+
+                <div class="portrait-area">
+
+                    <div class="floating-card floating-one">
+                        “No meio do caminho...”
+                    </div>
+
+                    <div class="portrait"></div>
+
+                    <div class="floating-card floating-two">
+                        Poesia + cotidiano + reflexão
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             AUTOR
+        ========================== -->
+
+        <section id="autor">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>01 · O autor</small>
+
+                    <h2>
+                        Quem foi Drummond?
+                    </h2>
+
+                    <p>
+                        Conhecer sua trajetória ajuda a entender a presença
+                        de Minas Gerais, do cotidiano e das questões humanas
+                        em sua produção literária.
+                    </p>
+
+                </div>
+
+
+                <div class="bio-grid">
+
+                    <div class="paper">
+
+                        <p>
+                            <strong>
+                                Carlos Drummond de Andrade
+                            </strong>
+                            nasceu em Itabira, Minas Gerais, em
+                            31 de outubro de 1902, e morreu em 1987.
+                        </p>
+
+                        <p>
+                            Foi poeta, cronista e contista e tornou-se
+                            um dos principais escritores brasileiros
+                            do século XX.
+                        </p>
+
+                        <p>
+                            Seu primeiro livro de poemas,
+                            <em>Alguma poesia</em>, foi publicado em 1930.
+                            A obra apresenta características importantes
+                            do Modernismo, como linguagem coloquial,
+                            versos livres, humor, ironia e atenção ao
+                            cotidiano.
+                        </p>
+
+                        <p>
+                            Ao longo de sua carreira, sua poesia também
+                            abordou a solidão, os conflitos humanos,
+                            a sociedade, a política e a passagem do tempo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="facts">
+
+                        <div class="fact">
+
+                            <strong>
+                                Nascimento
+                            </strong>
+
+                            <span>
+                                31 de outubro de 1902
+                            </span>
+
+                        </div>
+
+                        <div class="fact">
+
+                            <strong>
+                                Local
+                            </strong>
+
+                            <span>
+                                Itabira, Minas Gerais
+                            </span>
+
+                        </div>
+
+                        <div class="fact">
+
+                            <strong>
+                                Primeiro livro
+                            </strong>
+
+                            <span>
+                                <em>Alguma poesia</em> — 1930
+                            </span>
+
+                        </div>
+
+                        <div class="fact">
+
+                            <strong>
+                                Falecimento
+                            </strong>
+
+                            <span>
+                                1987 — Rio de Janeiro
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LINHA DO TEMPO
+        ========================== -->
+
+        <section id="linha-do-tempo">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>02 · Trajetória</small>
+
+                    <h2>
+                        Uma vida em movimento
+                    </h2>
+
+                    <p>
+                        Alguns momentos importantes para situar
+                        Drummond na literatura brasileira.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="year">
+                            1902
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                Nasce em Itabira
+                            </h3>
+
+                            <p>
+                                Carlos Drummond de Andrade nasce em
+                                Itabira, Minas Gerais. As lembranças
+                                de sua terra natal tornam-se importantes
+                                em sua poesia.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="year">
+                            1930
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                <em>Alguma poesia</em>
+                            </h3>
+
+                            <p>
+                                Publica seu primeiro livro de poemas,
+                                marco de sua entrada na literatura
+                                modernista.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="year">
+                            1940
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                <em>Sentimento do mundo</em>
+                            </h3>
+
+                            <p>
+                                A poesia amplia seu olhar para a sociedade,
+                                o mundo e as tensões históricas de seu tempo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="year">
+                            1945
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                <em>A rosa do povo</em>
+                            </h3>
+
+                            <p>
+                                Uma das obras centrais de sua produção,
+                                reunindo questões sociais, políticas
+                                e existenciais.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="year">
+                            1951
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                <em>Claro enigma</em>
+                            </h3>
+
+                            <p>
+                                Livro marcado por uma poesia mais
+                                reflexiva e por uma elaboração formal
+                                mais intensa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             POESIA
+        ========================== -->
+
+        <section id="poesia">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>03 · Características</small>
+
+                    <h2>
+                        Como é sua poesia?
+                    </h2>
+
+                    <p>
+                        Estes elementos ajudam a reconhecer características
+                        importantes da escrita de Drummond.
+                    </p>
+
+                </div>
+
+
+                <div class="features">
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Linguagem coloquial
+                        </h3>
+
+                        <p>
+                            Palavras e construções próximas da fala
+                            cotidiana aproximam a poesia do leitor.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Versos livres
+                        </h3>
+
+                        <p>
+                            O poema não precisa seguir obrigatoriamente
+                            uma métrica ou esquema de rimas tradicional.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Cotidiano
+                        </h3>
+
+                        <p>
+                            Pessoas, cidades, família, trabalho e
+                            acontecimentos comuns podem virar matéria
+                            poética.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Ironia e humor
+                        </h3>
+
+                        <p>
+                            O humor pode provocar estranhamento e também
+                            abrir espaço para críticas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Crise existencial
+                        </h3>
+
+                        <p>
+                            Solidão, inadequação e dúvidas sobre a
+                            existência aparecem com frequência.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            06
+                        </div>
+
+                        <h3>
+                            Crítica social
+                        </h3>
+
+                        <p>
+                            Obras como <em>Sentimento do mundo</em> e
+                            <em>A rosa do povo</em> apresentam questões
+                            sociais e históricas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            07
+                        </div>
+
+                        <h3>
+                            Memória de Minas
+                        </h3>
+
+                        <p>
+                            Itabira e Minas Gerais aparecem como espaços
+                            de memória, identidade e reflexão.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            08
+                        </div>
+
+                        <h3>
+                            Indivíduo × mundo
+                        </h3>
+
+                        <p>
+                            O indivíduo aparece diante de um mundo
+                            complexo, produzindo tensão e sentimento
+                            de isolamento.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="feature-number">
+                            09
+                        </div>
+
+                        <h3>
+                            Universalização
+                        </h3>
+
+                        <p>
+                            Uma situação pessoal pode ganhar significado
+                            reconhecível por muitas pessoas.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FRASE
+        ========================== -->
+
+        <div class="container">
+
+            <div class="quote">
+
+                <p>
+                    A poesia de Drummond parte do particular para
+                    alcançar perguntas maiores sobre o ser humano
+                    e o mundo.
+                </p>
+
+                <span>
+                    Chave de leitura para a exposição
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             OBRAS
+        ========================== -->
+
+        <section id="obras">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>04 · Literatura</small>
+
+                    <h2>
+                        Obras para conhecer
+                    </h2>
+
+                    <p>
+                        Quatro livros importantes para conhecer
+                        diferentes momentos da produção de Drummond.
+                    </p>
+
+                </div>
+
+
+                <div class="books">
+
+                    <article class="book">
+
+                        <div class="book-year">
+                            1930 · POESIA
+                        </div>
+
+                        <h3>
+                            <em>Alguma poesia</em>
+                        </h3>
+
+                        <p>
+                            Primeiro livro de poemas.
+                            Apresenta linguagem coloquial,
+                            humor, cotidiano e marcas modernistas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="book">
+
+                        <div class="book-year">
+                            1940 · POESIA
+                        </div>
+
+                        <h3>
+                            <em>Sentimento do mundo</em>
+                        </h3>
+
+                        <p>
+                            Amplia o olhar para os conflitos humanos,
+                            sociais e históricos.
+                        </p>
+
+                    </article>
+
+
+                    <article class="book">
+
+                        <div class="book-year">
+                            1945 · POESIA
+                        </div>
+
+                        <h3>
+                            <em>A rosa do povo</em>
+                        </h3>
+
+                        <p>
+                            Reúne poesia social, reflexão histórica,
+                            cotidiano e questões existenciais.
+                        </p>
+
+                    </article>
+
+
+                    <article class="book">
+
+                        <div class="book-year">
+                            1951 · POESIA
+                        </div>
+
+                        <h3>
+                            <em>Claro enigma</em>
+                        </h3>
+
+                        <p>
+                            Apresenta maior densidade reflexiva
+                            e elaboração formal.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="paper" style="margin-top: 20px;">
+
+                    <strong>
+                        Outras obras importantes:
+                    </strong>
+
+                    <p style="margin-top: 10px;">
+
+                        <em>Confissões de Minas</em> (1944),
+                        livro de prosa, e
+                        <em>Contos de Aprendiz</em> (1951),
+                        além de outras obras de sua produção.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ATIVIDADE
+        ========================== -->
+
+        <section id="atividade">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>05 · Para a turma</small>
+
+                    <h2>
+                        Atividade de leitura
+                    </h2>
+
+                    <p>
+                        Uma proposta para transformar a exposição
+                        em uma experiência de leitura.
+                    </p>
+
+                </div>
+
+
+                <div class="activities">
+
+                    <div class="activity">
+
+                        <h3>
+                            🔎 Caça às características
+                        </h3>
+
+                        <ol>
+
+                            <li>
+                                Escolham um poema de Drummond.
+                            </li>
+
+                            <li>
+                                Marquem palavras ou expressões
+                                relacionadas ao cotidiano.
+                            </li>
+
+                            <li>
+                                Identifiquem sinais de ironia,
+                                humor ou reflexão.
+                            </li>
+
+                            <li>
+                                Conversem sobre a questão maior
+                                apresentada pelo poema.
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+
+                    <div class="activity">
+
+                        <h3>
+                            📝 Mural "Meu caminho"
+                        </h3>
+
+                        <p>
+                            Escreva um pequeno texto sobre um objeto,
+                            lugar ou acontecimento comum que tenha
+                            um significado especial para você.
+                        </p>
+
+                        <p>
+                            <strong>
+                                Desafio:
+                            </strong>
+
+                            transforme algo cotidiano em uma reflexão
+                            que outras pessoas também possam reconhecer.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <h2>
+            CARLOS DRUMMOND DE ANDRADE
+        </h2>
+
+        <p>
+            Exposição de Literatura · 1º ano do Ensino Médio
+        </p>
+
+        <a href="#topo" class="back-top">
+            ↑ Voltar ao início
+        </a>
+
+    </footer>
+
+</body>
+</html>
